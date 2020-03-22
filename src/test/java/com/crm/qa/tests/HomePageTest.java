@@ -1,5 +1,6 @@
 package com.crm.qa.tests;
 
+// Follows Page Object Model - RN
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
