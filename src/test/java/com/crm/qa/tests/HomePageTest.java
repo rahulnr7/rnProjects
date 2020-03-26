@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.CheckPageFor;
 
 public class HomePageTest extends TestBase {
 	
@@ -25,6 +26,7 @@ public class HomePageTest extends TestBase {
 		initialize();
 		loginPage = new LoginPage();
 		homePage = loginPage.login(prop.getProperty("username"),prop.getProperty( "password"));
+		CheckPageFor.BrokenLinks();
 	}
 	
 	@Test(priority=1)

@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.CheckPageFor;
 
 public class LoginPageTest extends TestBase {
 	
@@ -22,6 +23,7 @@ public class LoginPageTest extends TestBase {
 	public void setUp(){
 		initialize();
 		 loginPage = new LoginPage();	
+	     CheckPageFor.BrokenLinks();
 		
 	}
 	
