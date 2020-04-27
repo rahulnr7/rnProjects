@@ -9,6 +9,7 @@ import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.CheckPageFor;
+import com.qa.ExtentReport.Listener.ExtentTestManager;
 
 public class LoginPageTest extends TestBase {
 	
@@ -17,26 +18,28 @@ public class LoginPageTest extends TestBase {
 	
 	public  LoginPageTest(){
 		super();
+		
 	}
 
 	@BeforeMethod
 	public void setUp(){
 		initialize();
-		 loginPage = new LoginPage();	
-	     CheckPageFor.BrokenLinks();
-		
+		 loginPage = new LoginPage();
+	     CheckPageFor.BrokenLinks();	
 	}
 	
 	
 	@Test(priority = 1)
 	public void loginPageTitleTest(){ 
 		
+		ExtentTestManager.startTest(Thread.currentThread().getStackTrace()[1].getMethodName(), "Test the tile of login page");		
 		String title = loginPage.validatePageTitle();
 		Assert.assertTrue(title.equals("Cogmento CRM"));
 	}
 	
 	@Test(priority = 2)
 	public void loginTest(){
+		ExtentTestManager.startTest(Thread.currentThread().getStackTrace()[1].getMethodName(), "Test Login");
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertEquals("Cogmento CRM", homePage.getHomePageTitle());
 	}
@@ -46,5 +49,4 @@ public class LoginPageTest extends TestBase {
 		driver.quit();
 	}
 	
-
 }

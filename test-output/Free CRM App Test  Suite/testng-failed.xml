@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Free CRM App Test  Suite]">
+  <listeners>
+    <listener class-name="com.qa.listeners.AnnotationTransformer"/>
+    <listener class-name="com.qa.listeners.TestListener"/>
+  </listeners>
   <test name="Free CRM App Test(failed)">
     <classes>
       <class name="com.crm.qa.tests.LoginPageTest">
         <methods>
-          <include name="loginPageTitleTest"/>
           <include name="loginTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
@@ -16,7 +19,7 @@
           <include name="verifyHomePageTitle"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyUserName"/>
+          <include name="verifyHomePageUserName"/>
         </methods>
       </class> <!-- com.crm.qa.tests.HomePageTest -->
     </classes>

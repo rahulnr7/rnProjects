@@ -37,7 +37,7 @@ public class TestBase {
 		
 		String jenkinsBrowser = System.getProperty("browser");
 		if(jenkinsBrowser!=null){
-			System.out.println("Jenkins Browser cjoice :"+jenkinsBrowser);
+			System.out.println("Jenkins Browser choice :"+jenkinsBrowser);
 		}
 		else System.out.println("Jenkins Browser choice not made - RN");
 		String browserName = prop.getProperty("browser");
