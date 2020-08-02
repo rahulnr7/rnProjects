@@ -15,7 +15,7 @@ public class LoginPageTest extends TestBase {
 	
 	LoginPage loginPage;
 	HomePage homePage;
-	
+	//Constructor
 	public  LoginPageTest(){
 		super();
 		
